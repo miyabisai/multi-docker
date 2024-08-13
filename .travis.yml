@@ -13,3 +13,10 @@ after_success:
   - docker build -t linmiya/multi-nginx ./nginx
   - docker build -t linmiya/multi-server ./server
   - docker build -t linmiya/multi-worker ./worker
+#Log in docker CLI
+  - echo "$Docker_Password" | docker login -u "$Docker_ID" --password-stdin
+#push docker to docker hub
+  - docker push linmiya/multi-client 
+  - docker push linmiya/multi-nginx
+  - docker push linmiya/multi-server
+  - docker push linmiya/multi-worker
