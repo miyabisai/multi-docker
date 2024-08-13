@@ -6,7 +6,7 @@ before_install:
   - docker build -t linmiya/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run linmiya/react-test npm test -- --coverage
+  - docker run -e CI=true linmiya/react-test npm test
 
 after_success:
   - docker build -t linmiya/multi-client ./client
