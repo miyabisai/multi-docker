@@ -12,4 +12,4 @@ after_success:
   - docker build -t linmiya/multi-client ./client
   - docker build -t linmiya/multi-nginx ./nginx
   - docker build -t linmiya/multi-server ./server
-  - docker build -t linmiya/multi-worker ./worker/client
+  - docker build -t linmiya/multi-worker ./worker
